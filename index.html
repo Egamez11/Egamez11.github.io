@@ -318,6 +318,9 @@
     }
     .project-card:hover::before { opacity: 1; }
     .project-card:hover { border-color: rgba(124,58,237,.4); box-shadow: 0 16px 40px rgba(0,0,0,.4); }
+    .project-card[data-href] { cursor: pointer; }
+    .project-card[data-href]:hover { border-color: rgba(124,58,237,.7); box-shadow: 0 20px 52px rgba(124,58,237,.22), 0 0 0 1px rgba(124,58,237,.25); transform: translateY(-6px); }
+    .project-card[data-href]:hover .project-title { background: var(--grad-text); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     .project-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; }
     .project-icon {
       width: 44px; height: 44px; border-radius: 10px;
@@ -641,8 +644,8 @@
 
     <div class="projects-grid">
 
-      <!-- Proyecto 1 -->
-      <div class="project-card" data-aos="fade-up" data-aos-delay="80">
+      <!-- Proyecto 1 — OrderBot -->
+      <div class="project-card" data-href="https://github.com/Egamez11/bot-pedidos" data-aos="fade-up" data-aos-delay="80">
         <div class="project-header">
           <div class="project-icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
@@ -658,14 +661,14 @@
           <span class="tag">Async</span>
         </div>
         <div class="project-links">
-          <a href="https://github.com/Egamez11/bot-pedidos" target="_blank" rel="noopener" class="project-link">
+          <span class="project-link">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.4.6.1.82-.26.82-.58v-2.04c-3.34.72-4.04-1.6-4.04-1.6-.55-1.4-1.34-1.77-1.34-1.77-1.08-.74.08-.72.08-.72 1.2.08 1.83 1.23 1.83 1.23 1.07 1.83 2.8 1.3 3.48 1 .1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.34-5.47-5.96 0-1.32.47-2.4 1.23-3.24-.12-.3-.53-1.53.12-3.19 0 0 1-.32 3.3 1.23a11.4 11.4 0 0 1 3-.4c1.02.01 2.04.14 3 .4 2.28-1.55 3.28-1.23 3.28-1.23.66 1.66.24 2.89.12 3.19.77.84 1.23 1.92 1.23 3.24 0 4.63-2.81 5.65-5.48 5.95.43.37.82 1.1.82 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
-            GitHub
-          </a>
+            Ver en GitHub ↗
+          </span>
         </div>
       </div>
 
-      <!-- Proyecto 2 -->
+      <!-- Proyecto 2 — Prospector (privado) -->
       <div class="project-card" data-aos="fade-up" data-aos-delay="160">
         <div class="project-header">
           <div class="project-icon">
@@ -690,25 +693,27 @@
         </div>
       </div>
 
-      <!-- Proyecto 3 -->
-      <div class="project-card" data-aos="fade-up" data-aos-delay="240">
+      <!-- Proyecto 3 — CryptoSignalBot -->
+      <div class="project-card" data-href="https://github.com/Egamez11/cryptosignalbot" data-aos="fade-up" data-aos-delay="240">
         <div class="project-header">
           <div class="project-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
           </div>
-          <span class="badge badge-gray">En desarrollo</span>
+          <span class="badge badge-green">Disponible</span>
         </div>
-        <h3 class="project-title">Próximamente</h3>
-        <p class="project-desc">Nuevo proyecto en desarrollo. Más detalles pronto.</p>
+        <h3 class="project-title">CryptoSignalBot — Bot de alertas de trading</h3>
+        <p class="project-desc">Bot de Telegram que monitorea BTC, ETH, SOL y BNB en tiempo real. Analiza RSI, MACD y Medias Móviles y envía alertas automáticas cuando detecta señales de trading.</p>
         <div class="project-tags">
           <span class="tag">Python</span>
-          <span class="tag">FastAPI</span>
-          <span class="tag">PostgreSQL</span>
+          <span class="tag">Telegram Bot</span>
+          <span class="tag">Binance API</span>
+          <span class="tag">pandas-ta</span>
+          <span class="tag">APScheduler</span>
         </div>
         <div class="project-links">
-          <span class="project-link" style="cursor:default; opacity:.5;">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
-            En progreso
+          <span class="project-link">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.4.6.1.82-.26.82-.58v-2.04c-3.34.72-4.04-1.6-4.04-1.6-.55-1.4-1.34-1.77-1.34-1.77-1.08-.74.08-.72.08-.72 1.2.08 1.83 1.23 1.83 1.23 1.07 1.83 2.8 1.3 3.48 1 .1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.34-5.47-5.96 0-1.32.47-2.4 1.23-3.24-.12-.3-.53-1.53.12-3.19 0 0 1-.32 3.3 1.23a11.4 11.4 0 0 1 3-.4c1.02.01 2.04.14 3 .4 2.28-1.55 3.28-1.23 3.28-1.23.66 1.66.24 2.89.12 3.19.77.84 1.23 1.92 1.23 3.24 0 4.63-2.81 5.65-5.48 5.95.43.37.82 1.1.82 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            Ver en GitHub ↗
           </span>
         </div>
       </div>
@@ -1027,6 +1032,11 @@ document.querySelectorAll('.ripple-btn').forEach(btn => {
     this.appendChild(ripple);
     setTimeout(() => ripple.remove(), 600);
   });
+});
+
+// ── Clickable project cards ───────────────────────────
+document.querySelectorAll('.project-card[data-href]').forEach(card => {
+  card.addEventListener('click', () => window.open(card.dataset.href, '_blank', 'noopener'));
 });
 
 // ── 3D Tilt on project cards ──────────────────────────
